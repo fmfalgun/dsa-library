@@ -30,16 +30,24 @@ def xref_url(repo: Repo, reference: str) -> str | None:
     return f"{entry.base_url}data/{parts[1]}.json" if entry and parts else None
 
 
+def _offline_problem(repo: Repo, reference: str) -> str | None:
+    """Return what is wrong with one xref's shape or alias, or None when it is fine."""
+    parts = split_xref(reference)
+    if parts is None:
+        return f"'{reference}' must look like <alias>:<path>"
+    if parts[0] not in repo.config.repos:
+        return f"alias '{parts[0]}' is not in config/repos.json"
+    return None
+
+
 def check_d17_offline(repo: Repo) -> list[Finding]:
     """D17 (offline): each xref has the `<alias>:<path>` shape and a registered alias."""
     findings = []
     for item in repo.items:
         for reference in item.values("xrefs"):
-            parts = split_xref(reference)
-            if parts is None:
-                findings.append(error("D17", item.path, "xrefs", f"'{reference}' must look like <alias>:<path>", (item.slug,)))
-            elif parts[0] not in repo.config.repos:
-                findings.append(error("D17", item.path, "xrefs", f"alias '{parts[0]}' is not in config/repos.json", (item.slug,)))
+            problem = _offline_problem(repo, reference)
+            if problem:
+                findings.append(error("D17", item.path, "xrefs", problem, (item.slug,)))
     return findings
 
 

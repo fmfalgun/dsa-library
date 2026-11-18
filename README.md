@@ -1,6 +1,58 @@
 # dsa-library
 
-Placeholder README, replaced in step 9.
+Everything I learn about data structures and algorithms, stored as linked
+Markdown files. Every idea lives in exactly one file, every link is stored
+once, and a generated JSON index serves the whole graph to any site or tool.
+
+Consumer URL: <https://fmfalgun.github.io/dsa-library/api/v1/index.json>
+(slim list: `.../api/v1/search.json`). Consumer guide: [docs/INTEGRATION.md](docs/INTEGRATION.md).
+
+## Setup
+
+1. Install the commit hook (first step, always): `git config core.hooksPath ci/hooks`
+2. Create the virtual environment: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`
+3. Optional: put a `gitleaks` binary at `.tools/bin/gitleaks` (or on `PATH`); the hook uses it for a token scan.
+4. Check everything: `.venv/bin/python ci/sync_index.py` then `.venv/bin/python -m pytest`
+
+The hook is never bypassed. Fix what it reports.
+
+## Layout
+
+```
+concepts/     one file per concept            problems/     one file per problem
+discussions/  cross-cutting discussions       solutions/    optional runnable code
+api/v1/       GENERATED, never edit by hand   schema/       JSON Schemas (source)
+config/       sites, sources, repos, tags, redirects
+templates/    skeletons for new items         docs/         format, relations, integration, authoring, decisions
+ci/           sync_index.py, dsa_lib/, hooks/ tests/        pytest + one failing fixture per rule
+```
+
+The three content folders and `tests/fixtures/` deliberately hold more than 9
+files; see "Directory-size rule" in [docs/DECISIONS.md](docs/DECISIONS.md) for
+the reasons, limits and mitigations.
+
+## Add an item
+
+1. `python ci/sync_index.py --new <concept|problem|discussion> <slug>`
+2. Fill the front matter and the body sections (see [docs/CONTENT_FORMAT.md](docs/CONTENT_FORMAT.md)). Use plain front-matter links only ([docs/RELATIONS.md](docs/RELATIONS.md)).
+3. `python ci/sync_index.py` (validates, then writes `api/v1/` and the rule list below)
+4. `git add . && git commit -m "dsa: <summary>" && git push` (the hook runs the same checks)
+
+Other commands: `--check` (fail if generated files are stale), `--online`
+(also verify cross-repo `xrefs`, warnings only), `--explain <slug>` (show an
+item's links in both directions and look-alike warnings).
+
+## Known concern: prose is not in the JSON
+
+`index.json` holds metadata and links only, not the Markdown bodies, so a
+consumer that wants an item's explanation has to fetch the `.md` file. We
+accepted that on purpose. If it becomes a real problem, we will consider a
+per-item `api/v1/items/<slug>.json` that includes the body (a minor-version
+addition). See [docs/INTEGRATION.md](docs/INTEGRATION.md).
+
+## Validation rules
+
+Generated from `ci/dsa_lib/rules.py`; do not edit between the markers.
 
 <!-- rules:start -->
 | Rule | Severity | Check |

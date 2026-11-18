@@ -1,0 +1,49 @@
+# Optional: after validate succeeds on main, tell the repos listed in
+# config/repos.json with "notify": true that new content was published
+# (repository_dispatch, event dsa-library-updated).
+# Off by default: it does nothing unless the DISPATCH_TOKEN secret exists
+# and at least one repo has notify: true. Repo names are derived from each
+# base_url of the form https://<owner>.github.io/<repo>/.
+name: notify
+
+on:
+  workflow_run:
+    workflows: [validate]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
+      HAS_TOKEN: ${{ secrets.DISPATCH_TOKEN != '' }}
+    steps:
+      - name: Skip when no token is configured
+        if: env.HAS_TOKEN != 'true'
+        run: echo "DISPATCH_TOKEN is not set; skipping notifications"
+      - uses: actions/checkout@v4
+        if: env.HAS_TOKEN == 'true'
+      - name: Send repository_dispatch to each notify repo
+        if: env.HAS_TOKEN == 'true'
+        run: |
+          python3 - <<'PY' > targets.txt
+          import json, re
+          for repo in json.load(open("config/repos.json")):
+              match = re.match(r"https://([^.]+)\.github\.io/([^/]+)/", repo["base_url"])
+              if repo.get("notify") and match:
+                  print(f"{match.group(1)}/{match.group(2)}")
+          PY
+          python3 - <<'PY' > payload.json
+          import json
+          index = json.load(open("api/v1/index.json"))
+          print(json.dumps({"event_type": "dsa-library-updated", "client_payload": {
+              "content_hash": index["content_hash"], "schema_version": index["schema_version"]}}))
+          PY
+          while read -r target; do
+            gh api "repos/${target}/dispatches" --method POST --input payload.json
+          done < targets.txt

@@ -69,3 +69,19 @@ most 9 files per directory.
 the tooling is the intended way in. The rule is broken knowingly in these
 places under the global rule 6 (the spec's layout outranks a readability
 rule); each exempt directory carries a note in `README.md`.
+
+## Further decisions (2026-11-18)
+
+| # | Topic | Decision | Why |
+| --- | --- | --- | --- |
+| 24 | Discussion slug date | The `yyyy-mm-dd` prefix of a discussion slug must equal `created` (D1 checks the shape, D19 the equality) | Slug and `created` never change, so they must not disagree |
+| 25 | D8 scope | Also covers `aliases`, not only link and tag lists | A repeated alias would otherwise surface as a confusing D14 |
+| 26 | D16 scope | Covers the README rule list as well as `api/v1/` | Spec section 11 says `--check` fails if either would change |
+| 27 | D20 scope | The Python check scans `concepts/`, `problems/`, `discussions/`, `solutions/`, `config/`, `docs/`, `templates/`; gitleaks in the hook scans everything staged | Keeps the check fast and the fixtures (built at run time) out of scope |
+| 28 | Fixtures for D20 and secrets | Fake secrets are assembled inside the tests, never stored in fixture files | A committed fake key would trip gitleaks and the hook |
+| 29 | Body links | Markdown bodies carry no `[[wikilinks]]`; relations exist only as front-matter fields | "Every link is stored once": a body link would be a second, unchecked copy |
+| 30 | Online xref check | Fetches `<base_url>data/<folder>/manifest.json` (a JSON list of `<slug>.json` names, as library-data publishes) and looks for `<slug>.json` | Matches library-data's real layout (checked 2026-11-18) |
+| 31 | Pinned action versions | Workflows use `actions/checkout@v4` and `actions/setup-python@v5` (major tags), not commit SHAs | SHAs were not verified offline; pin them when convenient |
+| 32 | `notify.yml` repo names | Derived from `base_url` of the form `https://<owner>.github.io/<repo>/` | `config/repos.json` has no owner/repo field and the spec adds none |
+| 33 | Python version | Developed on 3.14 with pinned PyYAML 6.0.2, jsonschema 4.23.0, pytest 8.3.4; CI runs 3.12 | Spec asks for 3.11 or newer |
+| 34 | Local venv | `.venv/` (gitignored) holds the pinned requirements; the hook prefers it over `python3` | System Python lacks the packages |

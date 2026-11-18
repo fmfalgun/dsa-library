@@ -69,14 +69,22 @@ def _collapse_single_values(links: dict[str, dict]) -> dict[str, dict]:
     return links
 
 
+def _enter(child: str, edges: dict[str, list[str]], state: dict[str, int],
+           path: list[str], stack: list) -> None:
+    """Start visiting `child`: mark it on the current path and push its neighbours."""
+    state[child] = 1
+    path.append(child)
+    stack.append((child, iter(sorted(edges.get(child, [])))))
+
+
 def _walk(start: str, edges: dict[str, list[str]], state: dict[str, int]) -> list[str] | None:
     """Depth-first walk from `start`; return a cycle as a path, or None.
 
     state maps a node to 1 (on the current path) or 2 (finished).
     """
-    path = [start]
-    state[start] = 1
-    stack = [(start, iter(sorted(edges.get(start, []))))]
+    path: list[str] = []
+    stack: list = []
+    _enter(start, edges, state, path, stack)
     while stack:
         node, children = stack[-1]
         child = next(children, None)
@@ -87,9 +95,7 @@ def _walk(start: str, edges: dict[str, list[str]], state: dict[str, int]) -> lis
         elif state.get(child) == 1:
             return path[path.index(child):] + [child]
         elif child not in state:
-            state[child] = 1
-            path.append(child)
-            stack.append((child, iter(sorted(edges.get(child, [])))))
+            _enter(child, edges, state, path, stack)
     return None
 
 

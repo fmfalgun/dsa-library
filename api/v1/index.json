@@ -1,17 +1,432 @@
 {
-  "aliases": {},
-  "content_hash": "73dc493fb3b0fa8653d755bd92da8c1422dc1dc2be8cdd72bd38ad63225c068b",
+  "aliases": {
+    "array": "arrays",
+    "dp": "dynamic-programming",
+    "greedy approach": "greedy",
+    "greedy choice": "greedy",
+    "list (fixed-size)": "arrays",
+    "minimum coins": "coin-change",
+    "monotone queue": "monotonic-deque",
+    "moving window": "sliding-window",
+    "two pointer technique": "two-pointers"
+  },
+  "content_hash": "9e8711e8950ecd9fbd2f9fc33c6ceb54d3bf074e9a1ddffde411a3bf366ac7a3",
   "counts": {
-    "concepts": 0,
-    "discussions": 0,
-    "problems": 0
+    "concepts": 7,
+    "discussions": 1,
+    "problems": 1
   },
   "diagnostics": {
     "warnings": []
   },
-  "items": {},
+  "items": {
+    "2026-11-17-why-greedy-fails-coin-change": {
+      "created": "2026-11-17",
+      "extra": {},
+      "kind": "discussion",
+      "links": {
+        "about": [
+          "coin-change",
+          "dynamic-programming",
+          "greedy"
+        ],
+        "discussed_in": [],
+        "distinct_from": []
+      },
+      "path": "discussions/2026-11-17-why-greedy-fails-coin-change.md",
+      "question": "Why does picking the largest coin first fail for some coin systems?",
+      "refs": [],
+      "show_on": [],
+      "sources": [],
+      "status": "answered",
+      "summary": "Counter-examples, and why dynamic programming is needed unless the coin system is canonical.",
+      "tags": [
+        "dynamic-programming",
+        "greedy"
+      ],
+      "title": "Why greedy fails for coin change",
+      "topic_key": "coin-change|dynamic-programming|greedy",
+      "updated": "2026-11-17",
+      "url": "https://fmfalgun.github.io/dsa-library/discussions/2026-11-17-why-greedy-fails-coin-change.md",
+      "xrefs": []
+    },
+    "arrays": {
+      "aliases": [
+        "array",
+        "list (fixed-size)"
+      ],
+      "complexity": {
+        "access": {
+          "space": "O(1)",
+          "time": "O(1)"
+        },
+        "insert-middle": {
+          "space": "O(1)",
+          "time": "O(n)"
+        },
+        "search-unsorted": {
+          "space": "O(1)",
+          "time": "O(n)"
+        }
+      },
+      "created": "2026-11-18",
+      "extra": {},
+      "kind": "concept",
+      "links": {
+        "discussed_in": [],
+        "prerequisites": [],
+        "related": [],
+        "required_by": [
+          "monotonic-deque",
+          "sliding-window",
+          "two-pointers"
+        ],
+        "used_by": [],
+        "variant_of": null,
+        "variants": []
+      },
+      "path": "concepts/arrays.md",
+      "refs": [],
+      "show_on": [],
+      "status": "stub",
+      "summary": "A contiguous block of same-sized elements addressed by index in constant time.",
+      "tags": [
+        "arrays"
+      ],
+      "title": "Arrays",
+      "type": "data-structure",
+      "updated": "2026-11-18",
+      "url": "https://fmfalgun.github.io/dsa-library/concepts/arrays.md",
+      "xrefs": []
+    },
+    "coin-change": {
+      "aliases": [
+        "minimum coins"
+      ],
+      "complexity": {
+        "min-coins-dp": {
+          "space": "O(amount)",
+          "time": "O(amount * coins)"
+        }
+      },
+      "created": "2026-11-18",
+      "extra": {},
+      "kind": "concept",
+      "links": {
+        "discussed_in": [
+          "2026-11-17-why-greedy-fails-coin-change"
+        ],
+        "prerequisites": [
+          "dynamic-programming"
+        ],
+        "related": [
+          "greedy"
+        ],
+        "required_by": [],
+        "used_by": [],
+        "variant_of": null,
+        "variants": []
+      },
+      "path": "concepts/coin-change.md",
+      "refs": [],
+      "show_on": [],
+      "status": "stub",
+      "summary": "Find the fewest coins (or the number of ways) that make a target amount from given denominations.",
+      "tags": [
+        "dynamic-programming",
+        "greedy"
+      ],
+      "title": "Coin change",
+      "type": "algorithm",
+      "updated": "2026-11-18",
+      "url": "https://fmfalgun.github.io/dsa-library/concepts/coin-change.md",
+      "xrefs": []
+    },
+    "dynamic-programming": {
+      "aliases": [
+        "dp"
+      ],
+      "complexity": {},
+      "created": "2026-11-18",
+      "extra": {},
+      "kind": "concept",
+      "links": {
+        "discussed_in": [
+          "2026-11-17-why-greedy-fails-coin-change"
+        ],
+        "prerequisites": [],
+        "related": [
+          "greedy"
+        ],
+        "required_by": [
+          "coin-change"
+        ],
+        "used_by": [],
+        "variant_of": null,
+        "variants": []
+      },
+      "path": "concepts/dynamic-programming.md",
+      "refs": [],
+      "show_on": [],
+      "status": "stub",
+      "summary": "Solve a problem by combining answers to overlapping subproblems, each computed once.",
+      "tags": [
+        "dynamic-programming",
+        "recursion"
+      ],
+      "title": "Dynamic programming",
+      "type": "paradigm",
+      "updated": "2026-11-18",
+      "url": "https://fmfalgun.github.io/dsa-library/concepts/dynamic-programming.md",
+      "xrefs": []
+    },
+    "greedy": {
+      "aliases": [
+        "greedy approach",
+        "greedy choice"
+      ],
+      "complexity": {},
+      "created": "2026-11-18",
+      "extra": {},
+      "kind": "concept",
+      "links": {
+        "discussed_in": [
+          "2026-11-17-why-greedy-fails-coin-change"
+        ],
+        "prerequisites": [],
+        "related": [
+          "coin-change",
+          "dynamic-programming"
+        ],
+        "required_by": [],
+        "used_by": [],
+        "variant_of": null,
+        "variants": []
+      },
+      "path": "concepts/greedy.md",
+      "refs": [],
+      "show_on": [],
+      "status": "stub",
+      "summary": "Build a solution by repeatedly taking the locally best choice, valid only when that choice is provably safe.",
+      "tags": [
+        "greedy",
+        "proofs"
+      ],
+      "title": "Greedy algorithms",
+      "type": "paradigm",
+      "updated": "2026-11-18",
+      "url": "https://fmfalgun.github.io/dsa-library/concepts/greedy.md",
+      "xrefs": []
+    },
+    "leetcode-0239-sliding-window-maximum": {
+      "created": "2026-11-18",
+      "difficulty": "Hard",
+      "extra": {},
+      "found_via": [
+        "neetcode-150"
+      ],
+      "kind": "problem",
+      "languages": [
+        "python"
+      ],
+      "links": {
+        "discussed_in": [],
+        "follow_up_of": null,
+        "follow_ups": [],
+        "similar": [],
+        "uses": [
+          "monotonic-deque",
+          "sliding-window"
+        ]
+      },
+      "path": "problems/leetcode-0239-sliding-window-maximum.md",
+      "problem_url": "https://leetcode.com/problems/sliding-window-maximum/",
+      "refs": [],
+      "show_on": [],
+      "source": "leetcode",
+      "source_id": "239",
+      "status": "solved",
+      "summary": "Maximum of every window of size k in an array.",
+      "tags": [
+        "arrays",
+        "sliding-window"
+      ],
+      "title": "Sliding Window Maximum",
+      "updated": "2026-11-18",
+      "url": "https://fmfalgun.github.io/dsa-library/problems/leetcode-0239-sliding-window-maximum.md",
+      "xrefs": []
+    },
+    "monotonic-deque": {
+      "aliases": [
+        "monotone queue"
+      ],
+      "complexity": {
+        "push": {
+          "space": "O(k)",
+          "time": "O(1) amortized"
+        },
+        "query-front": {
+          "space": "O(1)",
+          "time": "O(1)"
+        }
+      },
+      "created": "2026-11-18",
+      "extra": {},
+      "kind": "concept",
+      "links": {
+        "discussed_in": [],
+        "prerequisites": [
+          "arrays"
+        ],
+        "related": [],
+        "required_by": [],
+        "used_by": [
+          "leetcode-0239-sliding-window-maximum"
+        ],
+        "variant_of": null,
+        "variants": []
+      },
+      "path": "concepts/monotonic-deque.md",
+      "refs": [],
+      "show_on": [],
+      "status": "draft",
+      "summary": "A double-ended queue kept sorted so the front always holds the window's maximum or minimum.",
+      "tags": [
+        "arrays",
+        "sliding-window",
+        "stacks-queues"
+      ],
+      "title": "Monotonic deque",
+      "type": "data-structure",
+      "updated": "2026-11-18",
+      "url": "https://fmfalgun.github.io/dsa-library/concepts/monotonic-deque.md",
+      "xrefs": []
+    },
+    "sliding-window": {
+      "aliases": [
+        "moving window"
+      ],
+      "complexity": {
+        "slide-one-step": {
+          "space": "O(1)",
+          "time": "O(1) amortized"
+        }
+      },
+      "created": "2026-11-18",
+      "extra": {},
+      "kind": "concept",
+      "links": {
+        "discussed_in": [],
+        "prerequisites": [
+          "arrays"
+        ],
+        "related": [
+          "two-pointers"
+        ],
+        "required_by": [],
+        "used_by": [
+          "leetcode-0239-sliding-window-maximum"
+        ],
+        "variant_of": null,
+        "variants": []
+      },
+      "path": "concepts/sliding-window.md",
+      "refs": [],
+      "show_on": [],
+      "status": "draft",
+      "summary": "Maintain a contiguous range and update its answer incrementally as the range moves.",
+      "tags": [
+        "arrays",
+        "sliding-window",
+        "strings"
+      ],
+      "title": "Sliding window",
+      "type": "technique",
+      "updated": "2026-11-18",
+      "url": "https://fmfalgun.github.io/dsa-library/concepts/sliding-window.md",
+      "xrefs": []
+    },
+    "two-pointers": {
+      "aliases": [
+        "two pointer technique"
+      ],
+      "complexity": {},
+      "created": "2026-11-18",
+      "extra": {},
+      "kind": "concept",
+      "links": {
+        "discussed_in": [],
+        "prerequisites": [
+          "arrays"
+        ],
+        "related": [
+          "sliding-window"
+        ],
+        "required_by": [],
+        "used_by": [],
+        "variant_of": null,
+        "variants": []
+      },
+      "path": "concepts/two-pointers.md",
+      "refs": [],
+      "show_on": [],
+      "status": "stub",
+      "summary": "Move two indices through a sequence so each element is visited a bounded number of times.",
+      "tags": [
+        "arrays",
+        "two-pointers"
+      ],
+      "title": "Two pointers",
+      "type": "technique",
+      "updated": "2026-11-18",
+      "url": "https://fmfalgun.github.io/dsa-library/concepts/two-pointers.md",
+      "xrefs": []
+    }
+  },
   "redirects": {},
   "schema_version": "1.0.0",
-  "tags": {},
-  "topic_keys": {}
+  "tags": {
+    "arrays": [
+      "arrays",
+      "leetcode-0239-sliding-window-maximum",
+      "monotonic-deque",
+      "sliding-window",
+      "two-pointers"
+    ],
+    "dynamic-programming": [
+      "2026-11-17-why-greedy-fails-coin-change",
+      "coin-change",
+      "dynamic-programming"
+    ],
+    "greedy": [
+      "2026-11-17-why-greedy-fails-coin-change",
+      "coin-change",
+      "greedy"
+    ],
+    "proofs": [
+      "greedy"
+    ],
+    "recursion": [
+      "dynamic-programming"
+    ],
+    "sliding-window": [
+      "leetcode-0239-sliding-window-maximum",
+      "monotonic-deque",
+      "sliding-window"
+    ],
+    "stacks-queues": [
+      "monotonic-deque"
+    ],
+    "strings": [
+      "sliding-window"
+    ],
+    "two-pointers": [
+      "two-pointers"
+    ]
+  },
+  "topic_keys": {
+    "coin-change|dynamic-programming|greedy": [
+      "2026-11-17-why-greedy-fails-coin-change"
+    ]
+  }
 }

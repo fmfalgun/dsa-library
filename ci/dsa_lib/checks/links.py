@@ -77,13 +77,22 @@ def check_d06_cycles_and_self_links(repo: Repo) -> list[Finding]:
     return findings + [finding for finding in cycles if finding]
 
 
+def _mutual_pairs(repo: Repo, name: str) -> list[tuple[str, str]]:
+    """Return (a, b) with a < b where each item lists the other in the symmetric field `name`."""
+    stored = {item.slug: set(stored_targets(repo, item, name)) for item in repo.items if not item.error}
+    return [
+        (slug, other)
+        for slug, targets in sorted(stored.items())
+        for other in sorted(targets)
+        if slug < other and slug in stored.get(other, set())
+    ]
+
+
 def check_d07_symmetric_pairs(repo: Repo) -> list[Finding]:
     """D7: a related/similar pair is stored in one file only, never both."""
-    findings = []
-    for name in _SYMMETRIC_FIELDS:
-        stored = {item.slug: set(stored_targets(repo, item, name)) for item in repo.items if not item.error}
-        for slug, targets in sorted(stored.items()):
-            for other in sorted(targets):
-                if slug < other and slug in stored.get(other, set()):
-                    findings.append(error("D7", repo.by_slug[slug].path, name, f"'{slug}' and '{other}' list each other; keep the link in the newer file only", (slug, other)))
-    return findings
+    return [
+        error("D7", repo.by_slug[slug].path, name,
+              f"'{slug}' and '{other}' list each other; keep the link in the newer file only", (slug, other))
+        for name in _SYMMETRIC_FIELDS
+        for slug, other in _mutual_pairs(repo, name)
+    ]

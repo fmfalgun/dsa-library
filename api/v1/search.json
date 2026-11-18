@@ -1,1 +1,145 @@
-[]
+[
+  {
+    "aliases": [],
+    "kind": "discussion",
+    "path": "discussions/2026-11-17-why-greedy-fails-coin-change.md",
+    "show_on": [],
+    "slug": "2026-11-17-why-greedy-fails-coin-change",
+    "status": "answered",
+    "summary": "Counter-examples, and why dynamic programming is needed unless the coin system is canonical.",
+    "tags": [
+      "dynamic-programming",
+      "greedy"
+    ],
+    "title": "Why greedy fails for coin change"
+  },
+  {
+    "aliases": [
+      "array",
+      "list (fixed-size)"
+    ],
+    "kind": "concept",
+    "path": "concepts/arrays.md",
+    "show_on": [],
+    "slug": "arrays",
+    "status": "stub",
+    "summary": "A contiguous block of same-sized elements addressed by index in constant time.",
+    "tags": [
+      "arrays"
+    ],
+    "title": "Arrays"
+  },
+  {
+    "aliases": [
+      "minimum coins"
+    ],
+    "kind": "concept",
+    "path": "concepts/coin-change.md",
+    "show_on": [],
+    "slug": "coin-change",
+    "status": "stub",
+    "summary": "Find the fewest coins (or the number of ways) that make a target amount from given denominations.",
+    "tags": [
+      "dynamic-programming",
+      "greedy"
+    ],
+    "title": "Coin change"
+  },
+  {
+    "aliases": [
+      "dp"
+    ],
+    "kind": "concept",
+    "path": "concepts/dynamic-programming.md",
+    "show_on": [],
+    "slug": "dynamic-programming",
+    "status": "stub",
+    "summary": "Solve a problem by combining answers to overlapping subproblems, each computed once.",
+    "tags": [
+      "dynamic-programming",
+      "recursion"
+    ],
+    "title": "Dynamic programming"
+  },
+  {
+    "aliases": [
+      "greedy approach",
+      "greedy choice"
+    ],
+    "kind": "concept",
+    "path": "concepts/greedy.md",
+    "show_on": [],
+    "slug": "greedy",
+    "status": "stub",
+    "summary": "Build a solution by repeatedly taking the locally best choice, valid only when that choice is provably safe.",
+    "tags": [
+      "greedy",
+      "proofs"
+    ],
+    "title": "Greedy algorithms"
+  },
+  {
+    "aliases": [],
+    "kind": "problem",
+    "path": "problems/leetcode-0239-sliding-window-maximum.md",
+    "show_on": [],
+    "slug": "leetcode-0239-sliding-window-maximum",
+    "status": "solved",
+    "summary": "Maximum of every window of size k in an array.",
+    "tags": [
+      "arrays",
+      "sliding-window"
+    ],
+    "title": "Sliding Window Maximum"
+  },
+  {
+    "aliases": [
+      "monotone queue"
+    ],
+    "kind": "concept",
+    "path": "concepts/monotonic-deque.md",
+    "show_on": [],
+    "slug": "monotonic-deque",
+    "status": "draft",
+    "summary": "A double-ended queue kept sorted so the front always holds the window's maximum or minimum.",
+    "tags": [
+      "arrays",
+      "sliding-window",
+      "stacks-queues"
+    ],
+    "title": "Monotonic deque"
+  },
+  {
+    "aliases": [
+      "moving window"
+    ],
+    "kind": "concept",
+    "path": "concepts/sliding-window.md",
+    "show_on": [],
+    "slug": "sliding-window",
+    "status": "draft",
+    "summary": "Maintain a contiguous range and update its answer incrementally as the range moves.",
+    "tags": [
+      "arrays",
+      "sliding-window",
+      "strings"
+    ],
+    "title": "Sliding window"
+  },
+  {
+    "aliases": [
+      "two pointer technique"
+    ],
+    "kind": "concept",
+    "path": "concepts/two-pointers.md",
+    "show_on": [],
+    "slug": "two-pointers",
+    "status": "stub",
+    "summary": "Move two indices through a sequence so each element is visited a bounded number of times.",
+    "tags": [
+      "arrays",
+      "two-pointers"
+    ],
+    "title": "Two pointers"
+  }
+]
