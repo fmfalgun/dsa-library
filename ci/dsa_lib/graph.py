@@ -92,9 +92,10 @@ def _walk(start: str, edges: dict[str, list[str]], state: dict[str, int]) -> lis
             state[node] = 2
             stack.pop()
             path.pop()
-        elif state.get(child) == 1:
+            continue
+        if state.get(child) == 1:
             return path[path.index(child):] + [child]
-        elif child not in state:
+        if child not in state:
             _enter(child, edges, state, path, stack)
     return None
 
