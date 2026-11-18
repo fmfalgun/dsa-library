@@ -1,0 +1,127 @@
+{
+  "$id": "https://fmfalgun.github.io/dsa-library/api/v1/schema/index.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "aliases": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "content_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "counts": {
+      "additionalProperties": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "required": [
+        "concepts",
+        "problems",
+        "discussions"
+      ],
+      "type": "object"
+    },
+    "diagnostics": {
+      "properties": {
+        "warnings": {
+          "items": {
+            "required": [
+              "rule",
+              "slugs",
+              "message"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "warnings"
+      ],
+      "type": "object"
+    },
+    "items": {
+      "additionalProperties": {
+        "properties": {
+          "kind": {
+            "enum": [
+              "concept",
+              "problem",
+              "discussion"
+            ]
+          },
+          "links": {
+            "additionalProperties": {
+              "type": [
+                "array",
+                "string",
+                "null"
+              ]
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "kind",
+          "title",
+          "summary",
+          "status",
+          "show_on",
+          "path",
+          "url",
+          "links",
+          "created",
+          "updated"
+        ],
+        "type": "object"
+      },
+      "type": "object"
+    },
+    "redirects": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "schema_version": {
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "type": "string"
+    },
+    "tags": {
+      "additionalProperties": {
+        "items": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "type": "object"
+    },
+    "topic_keys": {
+      "additionalProperties": {
+        "items": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "content_hash",
+    "counts",
+    "items",
+    "aliases",
+    "redirects",
+    "topic_keys",
+    "tags",
+    "diagnostics"
+  ],
+  "title": "dsa-library api/v1/index.json",
+  "type": "object"
+}

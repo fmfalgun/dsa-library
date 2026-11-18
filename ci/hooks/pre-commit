@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Pre-commit hook: keeps secrets out of this public repo, then validates the
 # content and regenerates api/v1 so generated files land in the same commit.
-# Needs git, grep and python3 (3.11+). gitleaks is used when installed
+# Needs git, grep and Python 3.11+ with requirements.txt installed (a .venv is used if present). gitleaks is used when installed
 # (project-local .tools/bin first, then PATH); a missing gitleaks is a note.
 # Activate with: git config core.hooksPath ci/hooks
 
@@ -69,14 +69,28 @@ run_no_force_check() {
   "$(repo_root)/ci/check-no-force.sh"
 }
 
+# find_python prints the interpreter to use: the project venv (which has the
+# pinned requirements) first, then python3 on PATH. Prints nothing if neither exists.
+find_python() {
+  local venv_python
+  venv_python="$(repo_root)/.venv/bin/python"
+  if [[ -x "$venv_python" ]]; then
+    echo "$venv_python"
+  else
+    command -v python3 || true
+  fi
+}
+
 # run_sync validates the content, rewrites api/v1 and the README rule list,
 # and stages them. A failed validation blocks the commit.
 run_sync() {
-  if ! command -v python3 >/dev/null; then
-    echo "pre-commit: python3 not installed; cannot validate content" >&2
+  local interpreter
+  interpreter="$(find_python)"
+  if [[ -z "$interpreter" ]]; then
+    echo "pre-commit: no python found; cannot validate content" >&2
     return 1
   fi
-  python3 "$(repo_root)/ci/sync_index.py" || return 1
+  "$interpreter" "$(repo_root)/ci/sync_index.py" || return 1
   git add api README.md
 }
 
