@@ -1,0 +1,8 @@
+[
+  {
+    "alias": "library-data",
+    "base_url": "https://fmfalgun.github.io/library-data/",
+    "exists_check": "manifest",
+    "notify": false
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "atcoder": {
+    "id_required": true,
+    "name": "AtCoder",
+    "slug_id_format": "slugify",
+    "url_pattern": "^https://atcoder\\.jp/contests/[a-z0-9_-]+/tasks/[a-z0-9_]+$"
+  },
+  "codechef": {
+    "id_required": true,
+    "name": "CodeChef",
+    "slug_id_format": "slugify",
+    "url_pattern": "^https://www\\.codechef\\.com/problems/[A-Za-z0-9_]+/?$"
+  },
+  "codeforces": {
+    "id_required": true,
+    "name": "Codeforces",
+    "slug_id_format": "slugify",
+    "url_pattern": "^https://codeforces\\.com/(problemset/problem|contest|gym)/[0-9]+/(problem/)?[A-Za-z0-9]+/?$"
+  },
+  "cses": {
+    "id_required": true,
+    "name": "CSES Problem Set",
+    "slug_id_format": "slugify",
+    "url_pattern": "^https://cses\\.fi/problemset/task/[0-9]+/?$"
+  },
+  "gfg": {
+    "id_required": true,
+    "name": "GeeksforGeeks",
+    "slug_id_format": "slugify",
+    "url_pattern": "^https://www\\.geeksforgeeks\\.org/problems/[a-z0-9-]+/[0-9]+/?$"
+  },
+  "hackerrank": {
+    "id_required": true,
+    "name": "HackerRank",
+    "slug_id_format": "slugify",
+    "url_pattern": "^https://www\\.hackerrank\\.com/challenges/[a-z0-9-]+(/problem)?/?$"
+  },
+  "interview": {
+    "id_required": false,
+    "name": "Interview question",
+    "slug_id_format": "none",
+    "url_pattern": null
+  },
+  "leetcode": {
+    "id_required": true,
+    "name": "LeetCode",
+    "slug_id_format": "zero-pad-4",
+    "url_pattern": "^https://leetcode\\.com/problems/[a-z0-9-]+/?$"
+  },
+  "misc": {
+    "id_required": false,
+    "name": "Other source",
+    "slug_id_format": "none",
+    "url_pattern": null
+  },
+  "spoj": {
+    "id_required": true,
+    "name": "SPOJ",
+    "slug_id_format": "slugify",
+    "url_pattern": "^https://www\\.spoj\\.com/problems/[A-Za-z0-9_]+/?$"
+  }
+}
