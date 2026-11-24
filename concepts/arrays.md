@@ -11,9 +11,9 @@ complexity:
   search-unsorted: {time: "O(n)", space: "O(1)"}
 tags: [arrays]
 status: stub
-show_on: []
+show_on: [portfolio]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-24
 ---
 
 ## Intuition

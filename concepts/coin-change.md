@@ -11,9 +11,9 @@ complexity:
   min-coins-dp: {time: "O(amount * coins)", space: "O(amount)"}
 tags: [dynamic-programming, greedy]
 status: stub
-show_on: []
+show_on: [portfolio]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-24
 ---
 
 ## Intuition

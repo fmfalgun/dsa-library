@@ -10,7 +10,7 @@
     "moving window": "sliding-window",
     "two pointer technique": "two-pointers"
   },
-  "content_hash": "9e8711e8950ecd9fbd2f9fc33c6ceb54d3bf074e9a1ddffde411a3bf366ac7a3",
+  "content_hash": "8d66d205c4d3aabaaa094acc17bfec4870f0f2e21ae7bcbac8a1ac3ac72224e8",
   "counts": {
     "concepts": 7,
     "discussions": 1,
@@ -36,7 +36,9 @@
       "path": "discussions/2026-11-17-why-greedy-fails-coin-change.md",
       "question": "Why does picking the largest coin first fail for some coin systems?",
       "refs": [],
-      "show_on": [],
+      "show_on": [
+        "portfolio"
+      ],
       "sources": [],
       "status": "answered",
       "summary": "Counter-examples, and why dynamic programming is needed unless the coin system is canonical.",
@@ -46,7 +48,7 @@
       ],
       "title": "Why greedy fails for coin change",
       "topic_key": "coin-change|dynamic-programming|greedy",
-      "updated": "2026-11-17",
+      "updated": "2026-11-24",
       "url": "https://fmfalgun.github.io/dsa-library/discussions/2026-11-17-why-greedy-fails-coin-change.md",
       "xrefs": []
     },
@@ -87,7 +89,9 @@
       },
       "path": "concepts/arrays.md",
       "refs": [],
-      "show_on": [],
+      "show_on": [
+        "portfolio"
+      ],
       "status": "stub",
       "summary": "A contiguous block of same-sized elements addressed by index in constant time.",
       "tags": [
@@ -95,7 +99,7 @@
       ],
       "title": "Arrays",
       "type": "data-structure",
-      "updated": "2026-11-18",
+      "updated": "2026-11-24",
       "url": "https://fmfalgun.github.io/dsa-library/concepts/arrays.md",
       "xrefs": []
     },
@@ -129,7 +133,9 @@
       },
       "path": "concepts/coin-change.md",
       "refs": [],
-      "show_on": [],
+      "show_on": [
+        "portfolio"
+      ],
       "status": "stub",
       "summary": "Find the fewest coins (or the number of ways) that make a target amount from given denominations.",
       "tags": [
@@ -138,7 +144,7 @@
       ],
       "title": "Coin change",
       "type": "algorithm",
-      "updated": "2026-11-18",
+      "updated": "2026-11-24",
       "url": "https://fmfalgun.github.io/dsa-library/concepts/coin-change.md",
       "xrefs": []
     },
@@ -167,7 +173,9 @@
       },
       "path": "concepts/dynamic-programming.md",
       "refs": [],
-      "show_on": [],
+      "show_on": [
+        "portfolio"
+      ],
       "status": "stub",
       "summary": "Solve a problem by combining answers to overlapping subproblems, each computed once.",
       "tags": [
@@ -176,7 +184,7 @@
       ],
       "title": "Dynamic programming",
       "type": "paradigm",
-      "updated": "2026-11-18",
+      "updated": "2026-11-24",
       "url": "https://fmfalgun.github.io/dsa-library/concepts/dynamic-programming.md",
       "xrefs": []
     },
@@ -205,7 +213,9 @@
       },
       "path": "concepts/greedy.md",
       "refs": [],
-      "show_on": [],
+      "show_on": [
+        "portfolio"
+      ],
       "status": "stub",
       "summary": "Build a solution by repeatedly taking the locally best choice, valid only when that choice is provably safe.",
       "tags": [
@@ -214,7 +224,7 @@
       ],
       "title": "Greedy algorithms",
       "type": "paradigm",
-      "updated": "2026-11-18",
+      "updated": "2026-11-24",
       "url": "https://fmfalgun.github.io/dsa-library/concepts/greedy.md",
       "xrefs": []
     },
@@ -242,7 +252,9 @@
       "path": "problems/leetcode-0239-sliding-window-maximum.md",
       "problem_url": "https://leetcode.com/problems/sliding-window-maximum/",
       "refs": [],
-      "show_on": [],
+      "show_on": [
+        "portfolio"
+      ],
       "source": "leetcode",
       "source_id": "239",
       "status": "solved",
@@ -252,7 +264,7 @@
         "sliding-window"
       ],
       "title": "Sliding Window Maximum",
-      "updated": "2026-11-18",
+      "updated": "2026-11-24",
       "url": "https://fmfalgun.github.io/dsa-library/problems/leetcode-0239-sliding-window-maximum.md",
       "xrefs": []
     },
@@ -288,7 +300,9 @@
       },
       "path": "concepts/monotonic-deque.md",
       "refs": [],
-      "show_on": [],
+      "show_on": [
+        "portfolio"
+      ],
       "status": "draft",
       "summary": "A double-ended queue kept sorted so the front always holds the window's maximum or minimum.",
       "tags": [
@@ -298,7 +312,7 @@
       ],
       "title": "Monotonic deque",
       "type": "data-structure",
-      "updated": "2026-11-18",
+      "updated": "2026-11-24",
       "url": "https://fmfalgun.github.io/dsa-library/concepts/monotonic-deque.md",
       "xrefs": []
     },
@@ -332,7 +346,9 @@
       },
       "path": "concepts/sliding-window.md",
       "refs": [],
-      "show_on": [],
+      "show_on": [
+        "portfolio"
+      ],
       "status": "draft",
       "summary": "Maintain a contiguous range and update its answer incrementally as the range moves.",
       "tags": [
@@ -342,7 +358,7 @@
       ],
       "title": "Sliding window",
       "type": "technique",
-      "updated": "2026-11-18",
+      "updated": "2026-11-24",
       "url": "https://fmfalgun.github.io/dsa-library/concepts/sliding-window.md",
       "xrefs": []
     },
@@ -369,7 +385,9 @@
       },
       "path": "concepts/two-pointers.md",
       "refs": [],
-      "show_on": [],
+      "show_on": [
+        "portfolio"
+      ],
       "status": "stub",
       "summary": "Move two indices through a sequence so each element is visited a bounded number of times.",
       "tags": [
@@ -378,7 +396,7 @@
       ],
       "title": "Two pointers",
       "type": "technique",
-      "updated": "2026-11-18",
+      "updated": "2026-11-24",
       "url": "https://fmfalgun.github.io/dsa-library/concepts/two-pointers.md",
       "xrefs": []
     }

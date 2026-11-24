@@ -12,9 +12,9 @@ uses: [monotonic-deque, sliding-window]
 languages: [python]
 tags: [arrays, sliding-window]
 status: solved
-show_on: []
+show_on: [portfolio]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-24
 ---
 
 ## Problem in my own words

@@ -11,9 +11,9 @@ complexity:
   query-front: {time: "O(1)", space: "O(1)"}
 tags: [arrays, stacks-queues, sliding-window]
 status: draft
-show_on: []
+show_on: [portfolio]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-24
 ---
 
 ## Intuition

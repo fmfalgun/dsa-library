@@ -8,9 +8,9 @@ aliases: [two pointer technique]
 prerequisites: [arrays]
 tags: [arrays, two-pointers]
 status: stub
-show_on: []
+show_on: [portfolio]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-24
 ---
 
 ## Intuition

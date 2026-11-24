@@ -7,9 +7,9 @@ question: Why does picking the largest coin first fail for some coin systems?
 about: [coin-change, dynamic-programming, greedy]
 tags: [greedy, dynamic-programming]
 status: answered
-show_on: []
+show_on: [portfolio]
 created: 2026-11-17
-updated: 2026-11-17
+updated: 2026-11-24
 ---
 
 ## Question

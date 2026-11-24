@@ -7,9 +7,9 @@ type: paradigm
 aliases: [greedy approach, greedy choice]
 tags: [greedy, proofs]
 status: stub
-show_on: []
+show_on: [portfolio]
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-24
 ---
 
 ## Intuition
