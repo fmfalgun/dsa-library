@@ -17,6 +17,25 @@
   },
   {
     "aliases": [
+      "amortised analysis",
+      "amortized cost"
+    ],
+    "kind": "concept",
+    "path": "concepts/amortized-analysis.md",
+    "show_on": [
+      "portfolio"
+    ],
+    "slug": "amortized-analysis",
+    "status": "stub",
+    "summary": "Bounds the average cost per operation over a worst-case sequence, so rare expensive steps are paid for by many cheap ones.",
+    "tags": [
+      "complexity",
+      "proofs"
+    ],
+    "title": "Amortized analysis"
+  },
+  {
+    "aliases": [
       "array",
       "list (fixed-size)"
     ],
@@ -50,6 +69,26 @@
       "greedy"
     ],
     "title": "Coin change"
+  },
+  {
+    "aliases": [
+      "growable array",
+      "resizable array",
+      "vector"
+    ],
+    "kind": "concept",
+    "path": "concepts/dynamic-array.md",
+    "show_on": [
+      "portfolio"
+    ],
+    "slug": "dynamic-array",
+    "status": "draft",
+    "summary": "An array that over-allocates and copies into a larger block when full, giving amortized O(1) append at the end.",
+    "tags": [
+      "arrays",
+      "complexity"
+    ],
+    "title": "Dynamic array"
   },
   {
     "aliases": [

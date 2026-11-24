@@ -1,18 +1,23 @@
 {
   "aliases": {
+    "amortised analysis": "amortized-analysis",
+    "amortized cost": "amortized-analysis",
     "array": "arrays",
     "dp": "dynamic-programming",
     "greedy approach": "greedy",
     "greedy choice": "greedy",
+    "growable array": "dynamic-array",
     "list (fixed-size)": "arrays",
     "minimum coins": "coin-change",
     "monotone queue": "monotonic-deque",
     "moving window": "sliding-window",
-    "two pointer technique": "two-pointers"
+    "resizable array": "dynamic-array",
+    "two pointer technique": "two-pointers",
+    "vector": "dynamic-array"
   },
-  "content_hash": "8d66d205c4d3aabaaa094acc17bfec4870f0f2e21ae7bcbac8a1ac3ac72224e8",
+  "content_hash": "dbf7a45033f0ebad749c5f7745a2f4690654fb80a055cfaa9e877ce55c7f2300",
   "counts": {
-    "concepts": 7,
+    "concepts": 9,
     "discussions": 1,
     "problems": 1
   },
@@ -52,6 +57,43 @@
       "url": "https://fmfalgun.github.io/dsa-library/discussions/2026-11-17-why-greedy-fails-coin-change.md",
       "xrefs": []
     },
+    "amortized-analysis": {
+      "aliases": [
+        "amortised analysis",
+        "amortized cost"
+      ],
+      "complexity": {},
+      "created": "2026-11-24",
+      "extra": {},
+      "kind": "concept",
+      "links": {
+        "discussed_in": [],
+        "prerequisites": [],
+        "related": [],
+        "required_by": [
+          "dynamic-array"
+        ],
+        "used_by": [],
+        "variant_of": null,
+        "variants": []
+      },
+      "path": "concepts/amortized-analysis.md",
+      "refs": [],
+      "show_on": [
+        "portfolio"
+      ],
+      "status": "stub",
+      "summary": "Bounds the average cost per operation over a worst-case sequence, so rare expensive steps are paid for by many cheap ones.",
+      "tags": [
+        "complexity",
+        "proofs"
+      ],
+      "title": "Amortized analysis",
+      "type": "math",
+      "updated": "2026-11-24",
+      "url": "https://fmfalgun.github.io/dsa-library/concepts/amortized-analysis.md",
+      "xrefs": []
+    },
     "arrays": {
       "aliases": [
         "array",
@@ -85,7 +127,9 @@
         ],
         "used_by": [],
         "variant_of": null,
-        "variants": []
+        "variants": [
+          "dynamic-array"
+        ]
       },
       "path": "concepts/arrays.md",
       "refs": [],
@@ -146,6 +190,61 @@
       "type": "algorithm",
       "updated": "2026-11-24",
       "url": "https://fmfalgun.github.io/dsa-library/concepts/coin-change.md",
+      "xrefs": []
+    },
+    "dynamic-array": {
+      "aliases": [
+        "growable array",
+        "resizable array",
+        "vector"
+      ],
+      "complexity": {
+        "access": {
+          "space": "O(1)",
+          "time": "O(1)"
+        },
+        "append": {
+          "space": "O(1) amortized",
+          "time": "O(1) amortized, O(n) worst"
+        },
+        "insert-middle": {
+          "space": "O(1)",
+          "time": "O(n)"
+        },
+        "pop-end": {
+          "space": "O(1)",
+          "time": "O(1) amortized"
+        }
+      },
+      "created": "2026-11-24",
+      "extra": {},
+      "kind": "concept",
+      "links": {
+        "discussed_in": [],
+        "prerequisites": [
+          "amortized-analysis"
+        ],
+        "related": [],
+        "required_by": [],
+        "used_by": [],
+        "variant_of": "arrays",
+        "variants": []
+      },
+      "path": "concepts/dynamic-array.md",
+      "refs": [],
+      "show_on": [
+        "portfolio"
+      ],
+      "status": "draft",
+      "summary": "An array that over-allocates and copies into a larger block when full, giving amortized O(1) append at the end.",
+      "tags": [
+        "arrays",
+        "complexity"
+      ],
+      "title": "Dynamic array",
+      "type": "data-structure",
+      "updated": "2026-11-24",
+      "url": "https://fmfalgun.github.io/dsa-library/concepts/dynamic-array.md",
       "xrefs": []
     },
     "dynamic-programming": {
@@ -406,10 +505,15 @@
   "tags": {
     "arrays": [
       "arrays",
+      "dynamic-array",
       "leetcode-0239-sliding-window-maximum",
       "monotonic-deque",
       "sliding-window",
       "two-pointers"
+    ],
+    "complexity": [
+      "amortized-analysis",
+      "dynamic-array"
     ],
     "dynamic-programming": [
       "2026-11-17-why-greedy-fails-coin-change",
@@ -422,6 +526,7 @@
       "greedy"
     ],
     "proofs": [
+      "amortized-analysis",
       "greedy"
     ],
     "recursion": [
